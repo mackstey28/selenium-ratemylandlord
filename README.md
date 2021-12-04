@@ -15,6 +15,14 @@ Change the directory in the ratemylandlord_test.java file in line 24 to wherever
 
 ![image](https://user-images.githubusercontent.com/91094317/144691274-4f0cea98-0e37-454d-8bad-f9aa48ddc99d.png)
 
+You also need to add the jar files to the classpath here in VS Code (should be at the bottom left of the window):
+
+![image](https://user-images.githubusercontent.com/91094317/144691919-a228d918-f1db-43d3-80d7-3c02f0649611.png)
+
+Add the jar files for selenium and junit from the lib folder:
+
+![image](https://user-images.githubusercontent.com/91094317/144691977-773443ef-00cb-4a70-aec0-0d2a3b692aef.png)
+
 Compile the React end of ratemylandlord. (```npm run dev``` in ```ratemylandlord/rate_my_landlord/frontend```)
 
 For the Django end, cd into ```ratemylandlord/rate_my_landlord``` in another terminal window
