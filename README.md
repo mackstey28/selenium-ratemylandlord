@@ -23,6 +23,10 @@ Add the jar files for selenium and junit from the lib folder:
 
 ![image](https://user-images.githubusercontent.com/91094317/144691977-773443ef-00cb-4a70-aec0-0d2a3b692aef.png)
 
+Also, go to settings.json in ```selenium-tests/.vscode``` and add the file paths to the jars in the lib foldier:
+
+![image](https://user-images.githubusercontent.com/91094317/144692312-17712fee-7c74-465d-89e9-56a85c5cda78.png)
+
 Compile the React end of ratemylandlord. (```npm run dev``` in ```ratemylandlord/rate_my_landlord/frontend```)
 
 For the Django end, cd into ```ratemylandlord/rate_my_landlord``` in another terminal window
