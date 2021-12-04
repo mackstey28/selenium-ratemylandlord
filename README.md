@@ -12,6 +12,7 @@ Open the project in Visual Studio Code
 The java file is in selenium-tests/src/AutomationFramework
 
 Change the directory in the ratemylandlord_test.java file in line 24 to wherever you put the repository (this is for chromedriver):
+
 ![image](https://user-images.githubusercontent.com/91094317/144691274-4f0cea98-0e37-454d-8bad-f9aa48ddc99d.png)
 
 Compile the React end of ratemylandlord. (```npm run dev``` in ```ratemylandlord/rate_my_landlord/frontend```)
