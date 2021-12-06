@@ -40,6 +40,11 @@ public class ratemylandlord_test
         Thread.sleep(2000L);
 
         Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:8000/search");
+
+        driver.findElement(By.xpath("/html/body/div/div/div/div[2]/header/header/div/a")).click(); // go back to homepage
+
+        Assert.assertEquals(driver.getCurrentUrl(), "http://127.0.0.1:8000/");
+
         driver.close();
     }
 
@@ -66,13 +71,13 @@ public class ratemylandlord_test
         driver.manage().window().maximize();
         Thread.sleep(1000L);
         
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // click on add new landlord
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // click on add new landlord
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("Paul");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Atreides");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Atreides");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // click submit
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // click submit
         Thread.sleep(1000L);
         
         // should have landlord named "Paul Atreides"
@@ -89,13 +94,13 @@ public class ratemylandlord_test
         driver.manage().window().maximize();
         Thread.sleep(1000L);
         
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // click on add new landlord
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // click on add new landlord
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("Joe");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Gatto");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Gatto");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // back
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // back
         Thread.sleep(2000L);
 
         // should be back to original URL
@@ -113,35 +118,35 @@ public class ratemylandlord_test
         driver.manage().window().maximize();
         Thread.sleep(1000L);
         
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // click on add new landlord
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // click on add new landlord
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("Anakin");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Skywalker");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Skywalker");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // click submit
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // click submit
         Thread.sleep(1000L);
         /* //sending duplicate
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/input")).sendKeys("Anakin");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).clear();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).sendKeys("Anakin");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Skywalker");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).clear();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Skywalker");
         Thread.sleep(1000L);
         */
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).click();
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).clear();
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("Obi-Wan");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Kenobi");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).clear();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Kenobi");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // click submit again
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // click submit again
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // click back
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // click back
         Thread.sleep(2000L);
         
         // there should only be one "Anakin Skywalker"
@@ -162,9 +167,9 @@ public class ratemylandlord_test
         
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // click submit
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // click submit
         Thread.sleep(2000L);
         
         // check that we get error message
@@ -183,14 +188,52 @@ public class ratemylandlord_test
         
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("¥¦Ø†¶£*®#©œŒ±");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("§¡—‰…ƒ¼¾[}@{]<>");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("§¡—‰…ƒ¼¾[}@{]<>");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // click submit
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // click submit
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // click back
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // click back
         Thread.sleep(2000L);
 
         // we should get error for invalid landlord name
+        driver.close();
+    }
+
+    public static void no_first_name() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", directory);
+        final WebDriver driver = (WebDriver)new ChromeDriver();
+
+        driver.get("http://127.0.0.1:8000/add-landlord");
+        driver.manage().window().maximize();
+        Thread.sleep(1000L);
+        
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).sendKeys("Pablo");
+        Thread.sleep(1000L);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click();
+        Thread.sleep(2000L);
+
+        String error_msg = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[1]/div")).getText();
+        Assert.assertEquals(error_msg, "Unable to submit new landlord. Please make sure you have filled out all required fields.");
+
+        driver.close();
+    }
+
+    public static void no_last_name() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", directory);
+        final WebDriver driver = (WebDriver)new ChromeDriver();
+
+        driver.get("http://127.0.0.1:8000/add-landlord");
+        driver.manage().window().maximize();
+        Thread.sleep(1000L);
+        
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Escobar");
+        Thread.sleep(1000L);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click();
+        Thread.sleep(2000L);
+
+        String error_msg = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div[1]/div")).getText();
+        Assert.assertEquals(error_msg, "Unable to submit new landlord. Please make sure you have filled out all required fields.");
+
         driver.close();
     }
 
@@ -202,25 +245,25 @@ public class ratemylandlord_test
         driver.manage().window().maximize();
         Thread.sleep(1000L);
 
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click();
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("Thomas");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Anderson");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Anderson");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click();
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).click();
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).clear();
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("Anderson");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Cooper");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).clear();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Cooper");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click();
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // go back
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // go back
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/div/div/input")).sendKeys("anderson");
         Thread.sleep(1000L);
@@ -262,11 +305,11 @@ public class ratemylandlord_test
         
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/input")).sendKeys("Shirley Ann");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Jackson");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Jackson");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // click submit
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // click submit
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // click back
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // click back
         Thread.sleep(1000L);
 
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/div/div/input")).sendKeys("shirley ann jackson");
@@ -280,25 +323,39 @@ public class ratemylandlord_test
         Thread.sleep(1000L);
         
         WebElement slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[1]")); // select Safety Rating slider
-        //*[@id="app"]/div/div[1]/div/div[3]/div/div[1]/span[1]
-        //*[@id="app"]/div/div[1]/div/div[3]/div/div[1]/span[1]/span[1]
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 0
+        Actions action = new Actions(driver);
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 0
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[2]/span[1]")); // select Responsiveness and Maintenance Rating slider
+        action.click(slider).build().perform(); //*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[2]/span[1]
+        for (int i = 0; i < 5; i++) { // move to 0
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[3]/span[1]")); // select Transparency and Trustworthiness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 0
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[4]/span[1]")); // select Organization Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 0
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[5]/span[1]")); // select Student Friendliness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 0
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[2]/button")).click(); // hit submit
         Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[2]/span[25]")); // select Responsiveness and Maintenance Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 0
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[3]/span[25]")); // select Transparency and Trustworthiness Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 0
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[4]/span[25]")); // select Organization Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 0
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[5]/span[25]")); // select Student Friendliness Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 0
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[2]/button/span[1]")).click(); // hit submit
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")); // click Back to Search
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")); // click Back to Search
         Thread.sleep(2000L);
 
         driver.close();
@@ -322,25 +379,41 @@ public class ratemylandlord_test
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/div/div/input")).sendKeys("Lady Jessica"); // input reviewer name
         Thread.sleep(1000L);
         
-        WebElement slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[1]/span[25]")); // select Safety Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[2]/span[25]")); // select Responsiveness and Maintenance Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[3]/span[25]")); // select Transparency and Trustworthiness Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[4]/span[25]")); // select Organization Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[5]/span[25]")); // select Student Friendliness Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[2]/button/span[1]")).click(); // hit submit
+        WebElement slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[1]/span[1]")); // select Safety Rating slider
+        Actions action = new Actions(driver);
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[2]")); // select Responsiveness and Maintenance Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }        
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[3]/span[1]")); // select Transparency and Trustworthiness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }       
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[4]")); // select Organization Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[5]")); // select Student Friendliness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[2]/button")).click(); // hit submit
         Thread.sleep(1000L);
 
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[4]/a/span[1]")).click(); // click Back to Search
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // click Back to Search
         Thread.sleep(1000L);
 
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/div/div/input")).sendKeys("Atreides");
@@ -353,22 +426,36 @@ public class ratemylandlord_test
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/div/div/input")).sendKeys("Gurney Halleck"); // input reviewer name
         Thread.sleep(1000L);
         
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[1]/span[25]")); // select Safety Rating slider
-        for (int i = 0; i < 3; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 2
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[2]/span[25]")); // select Responsiveness and Maintenance Rating slider
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[1]")); // select Safety Rating slider
+        action = new Actions(driver);
+        action.click(slider).build().perform();
+        for (int i = 0; i < 3; i++) { // move to 2
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[2]/span[1]")); // select Responsiveness and Maintenance Rating slider
         // stay at to 5
         Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[3]/span[25]")); // select Transparency and Trustworthiness Rating slider
-        for (int i = 0; i < 4; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 9
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[4]/span[25]")); // select Organization Rating slider
-        for (int i = 0; i < 2; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 7
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[5]/span[25]")); // select Student Friendliness Rating slider
-        for (int i = 0; i < 1; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 4
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[2]/button/span[1]")).click(); // hit submit
+
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[3]/span[1]")); // select Transparency and Trustworthiness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 4; i++) { // move to 9
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[4]/span[1]")); // select Organization Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 2; i++) { // move to 7
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[5]/span[1]")); // select Student Friendliness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 1; i++) { // move to 4
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[2]/button")).click(); // hit submit
         Thread.sleep(1000L);
 
         driver.close();
@@ -389,10 +476,10 @@ public class ratemylandlord_test
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/ul/a/div/h6")).click();
         Thread.sleep(1000L);
         
-        String results = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/h5")).getText();
+        String results = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/h5")).getText();
         Assert.assertEquals(results, "1 Review for Shirley Ann Jackson");
 
-        String overall = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/h6")).getText();
+        String overall = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[2]/div/div/h6")).getText();
         Assert.assertEquals(overall, "RPI Student • 0.0 Overall");
 
         driver.close();
@@ -413,13 +500,13 @@ public class ratemylandlord_test
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/ul/a/div/h6")).click();
         Thread.sleep(2000L);
 
-        String results = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/h5")).getText();
+        String results = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[1]/h5")).getText();
         Assert.assertEquals(results, "2 Reviews for Paul Atreides");
 
-        String overall1 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[1]/div/h6")).getText();
+        String overall1 = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div[1]/div/h6")).getText();
         Assert.assertEquals(overall1, "Lady Jessica • 10.0 Overall");
 
-        String overall2 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div/h6")).getText();
+        String overall2 = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div[2]/div/h6")).getText();
         Assert.assertEquals(overall2, "Gurney Halleck • 5.4 Overall");
 
         driver.close();
@@ -433,7 +520,7 @@ public class ratemylandlord_test
         driver.manage().window().maximize();
         Thread.sleep(1000L);
 
-        WebElement slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/span")); // select rating scale
+        WebElement slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[1]/span/span[1]")); // select rating scale
         
         // move to 10
         Actions action = new Actions(driver);
@@ -443,7 +530,7 @@ public class ratemylandlord_test
             Thread.sleep(200L);
         }
 
-        String error_msg = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/h5")).getText();
+        String error_msg = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/h5")).getText();
         Assert.assertEquals(error_msg, "No search results found for overall ratings > 10");
         driver.close();
     }
@@ -456,97 +543,131 @@ public class ratemylandlord_test
         driver.manage().window().maximize();
         Thread.sleep(1000L);
 
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/input")).sendKeys("Peter");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).sendKeys("Peter");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Griffin");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Griffin");
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // submit
-        Thread.sleep(1000L);
-
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div/div/input")).sendKeys("Homer");
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).click();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).clear();
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div/input")).sendKeys("Simpson");
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/button")).click(); // submit
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // submit
         Thread.sleep(1000L);
 
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // back
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).clear();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[2]/div/div/input")).sendKeys("Homer");
+        Thread.sleep(1000L);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).clear();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div/input")).sendKeys("Simpson");
+        Thread.sleep(1000L);
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/button")).click(); // submit
+        Thread.sleep(1000L);
+
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // back
 
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/div/div/input")).sendKeys("Peter Griffin");
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/div/div/div/button")).click();
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/ul/a")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/ul/a")).click();
         Thread.sleep(1000L);
 
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/div/div/input")).sendKeys("Lois Griffin");
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/div/div/input")).sendKeys("Lois Griffin");
         Thread.sleep(1000L);
-        WebElement slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[1]/span[25]")); // select Safety Rating slider
-        for (int i = 0; i < 1; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 4
+
+        WebElement slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[1]/span[1]")); // select Safety Rating slider
+        Actions action = new Actions(driver);
+        action.click(slider).build().perform();
+        for (int i = 0; i < 1; i++) { // move to 4
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[2]")); // select Responsiveness and Maintenance Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 1; i++) { // move to 4
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }        
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[3]/span[1]")); // select Transparency and Trustworthiness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 1; i++) { // move to 4
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }       
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[4]")); // select Organization Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 1; i++) { // move to 4
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[5]")); // select Student Friendliness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 1; i++) { // move to 4
+            action.sendKeys(Keys.ARROW_LEFT).build().perform();
+            Thread.sleep(200L);
+        }
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[2]/button")).click(); // hit submit
         Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[2]/span[25]")); // select Responsiveness and Maintenance Rating slider
-        for (int i = 0; i < 1; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 4
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[3]/span[25]")); // select Transparency and Trustworthiness Rating slider
-        for (int i = 0; i < 1; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 4
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[4]/span[25]")); // select Organization Rating slider
-        for (int i = 0; i < 1; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 4
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[5]/span[25]")); // select Student Friendliness Rating slider
-        for (int i = 0; i < 1; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 4
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[2]/button/span[1]")).click(); // hit submit
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // back to search
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // back to search
         Thread.sleep(1000L);
 
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/div/div/input")).sendKeys("Homer Simpson");
         Thread.sleep(1000L);
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[1]/div/div/div/button")).click();
         Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/ul/a")).click();
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/ul/a")).click();
         Thread.sleep(1000L);
 
         driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/div/div/input")).sendKeys("Marge Simpson");
         Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[1]/span[25]")); // select Safety Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[1]/span[1]")); // select Safety Rating slider
+        action = new Actions(driver);
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[2]")); // select Responsiveness and Maintenance Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }       
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]/div/div[1]/span[3]/span[1]")); // select Transparency and Trustworthiness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }     
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[4]")); // select Organization Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[5]")); // select Student Friendliness Rating slider
+        action.click(slider).build().perform();
+        for (int i = 0; i < 5; i++) { // move to 10
+            action.sendKeys(Keys.ARROW_RIGHT).build().perform();
+            Thread.sleep(200L);
+        }
+        
+        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[2]/button")).click(); // hit submit
         Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[2]/span[25]")); // select Responsiveness and Maintenance Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[3]/span[25]")); // select Transparency and Trustworthiness Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[4]/span[25]")); // select Organization Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[1]/span[5]/span[25]")); // select Student Friendliness Rating slider
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_RIGHT); // move to 10
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/div/div[2]/button/span[1]")).click(); // hit submit
-        Thread.sleep(1000L);
-        driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[4]/a")).click(); // back to search
+        driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[4]/a")).click(); // back to search
         Thread.sleep(1000L);
 
         driver.navigate().to("http://127.0.0.1:8000/filter");
         Thread.sleep(1000L);
 
-        slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[1]/span")); // select rating scale
+        slider = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[1]/span")); // select rating scale
         
         // move to 0
-        Actions action = new Actions(driver);
+        action = new Actions(driver);
         action.click(slider).build().perform();
         for (int i = 0; i < 6; i++) {
             action.sendKeys(Keys.ARROW_LEFT).build().perform();
             Thread.sleep(200L);
         }
-        String all_landlords = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/ul")).getText();
+        String all_landlords = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]")).getText();
         Assert.assertTrue(all_landlords.contains("Homer Simpson") && all_landlords.contains("Paul Atreides") 
                           && all_landlords.contains("Peter Griffin") && all_landlords.contains("Shirley Ann Jackson"));
         Thread.sleep(1000L);
@@ -556,7 +677,7 @@ public class ratemylandlord_test
             action.sendKeys(Keys.ARROW_RIGHT).build().perform();
             Thread.sleep(200L);
         }
-        all_landlords = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/ul")).getText();
+        all_landlords = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]")).getText();
         Assert.assertTrue(all_landlords.contains("Homer Simpson") && all_landlords.contains("Paul Atreides") 
                           && all_landlords.contains("Peter Griffin") && !all_landlords.contains("Shirley Ann Jackson"));
         Thread.sleep(1000L);
@@ -566,17 +687,17 @@ public class ratemylandlord_test
             action.sendKeys(Keys.ARROW_RIGHT).build().perform();
             Thread.sleep(200L);
         }
-        all_landlords = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/ul")).getText();
+        all_landlords = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]")).getText();
         Assert.assertTrue(all_landlords.contains("Homer Simpson") && all_landlords.contains("Paul Atreides") 
                           && !all_landlords.contains("Peter Griffin") && !all_landlords.contains("Shirley Ann Jackson"));
         Thread.sleep(1000L);
 
-        // move to 10
-        for (int i = 0; i < 5; i++) {
+        // move to 9
+        for (int i = 0; i < 4; i++) {
             action.sendKeys(Keys.ARROW_RIGHT).build().perform();
             Thread.sleep(200L);
         }
-        all_landlords = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[3]/ul")).getText();
+        all_landlords = driver.findElement(By.xpath("/html/body/div/div/div/div[1]/div/div[3]")).getText();
         Assert.assertTrue(all_landlords.contains("Homer Simpson") && !all_landlords.contains("Paul Atreides") 
                           && !all_landlords.contains("Peter Griffin") && !all_landlords.contains("Shirley Ann Jackson"));
         Thread.sleep(1000L);
@@ -599,36 +720,21 @@ public class ratemylandlord_test
     }
 
     public static void test() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", directory);
-        final WebDriver driver = (WebDriver)new ChromeDriver();
-
-        driver.get("http://127.0.0.1:8000/landlord/search/7");
-        driver.manage().window().maximize();
-        Thread.sleep(1000L);
-
-        WebElement slider = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div[1]/div/div[3]/div/div[1]/span[1]/span[1]")); // select Safety Rating slider
-        //*[@id="app"]/div/div[1]/div/div[3]/div/div[1]/span[1]
-        //*[@id="app"]/div/div[1]/div/div[3]/div/div[1]/span[1]/span[1]
-
-        for (int i = 0; i < 5; i++ ) slider.sendKeys(Keys.ARROW_LEFT); // move to 0
-        Thread.sleep(1000L);
-
-        driver.close();
     }
 
     public static void main(final String[] args) throws InterruptedException {
-        /*
         // TEST CASES FOR HOMEPAGE NAVIGATION
-        homepage_search_by_name();
+        homepage_search_by_name(); 
         homepage_search_by_filter();
 
         // TEST CASES FOR CREATING NEW LANDLORD
         create_new_landlord();
         backout_new_landlord();
-        create_duplicate_landlord();
+        create_duplicate_landlord(); // oof
         create_empty_landlord();
         create_invalid_landlord();
-        // add test where we don't add first or last name
+        no_first_name();
+        no_last_name();
 
         // TEST CASES FOR SEARCHING LANDLORD
         search_valid_landlord();
@@ -648,7 +754,6 @@ public class ratemylandlord_test
 
         // MISCELLANEOUS TESTS
         illegal_url();
-        */
         test();
 
         System.out.println("All tests are successful!");
